@@ -1,5 +1,7 @@
 # STAR WARS
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/saranshbansal/starwarsinreact.svg)](https://greenkeeper.io/)
+
 Using API from the website http://swapi.co. 
 
 ## Description
