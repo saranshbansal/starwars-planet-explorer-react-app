@@ -1,0 +1,218 @@
+* {
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box
+}
+
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
+	blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
+	q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
+	fieldset, form, label, legend, caption, article, aside, canvas, details,
+	figcaption, figure, footer, header, hgroup, menu, nav, section, summary,
+	time, mark, audio, video {
+	padding: 0;
+	border: 0;
+	outline: 0;
+	vertical-align: baseline;
+	background: transparent
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, nav,
+	section {
+	display: block
+}
+
+html {
+	font-size: 14px;
+	line-height: 24px;
+	width: 100%;
+	height: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+	overflow-y: scroll;
+	overflow-x: hidden
+}
+
+img {
+	vertical-align: middle;
+	max-width: 100%;
+	height: auto;
+	border: 0;
+	-ms-interpolation-mode: bicubic
+}
+
+body {
+	min-height: 100%;
+	-webkit-font-smoothing: subpixel-antialiased
+}
+
+.clearfix {
+	clear: both;
+	zoom: 1
+}
+
+.clearfix:before, .clearfix:after {
+	content: ' ';
+	display: block;
+	height: 0;
+	visibility: hidden
+}
+
+.clearfix:after {
+	clear: both
+}
+
+.plain.error-page-wrapper {
+	font-family: 'Source Sans Pro', sans-serif;
+	position: relative;
+}
+
+.plain.error-page-wrapper .content-container {
+	-webkit-transition: left .5s ease-out, opacity .5s ease-out;
+	-moz-transition: left .5s ease-out, opacity .5s ease-out;
+	-ms-transition: left .5s ease-out, opacity .5s ease-out;
+	-o-transition: left .5s ease-out, opacity .5s ease-out;
+	transition: left .5s ease-out, opacity .5s ease-out;
+	/* max-width: 450px; */
+	position: relative;
+	text-align: left;
+	padding-left: 20vh;
+	padding-top: 20vh;
+}
+
+.plain.error-page-wrapper .content-container.in {
+	left: 5%;
+	opacity: 1;
+}
+
+.plain.error-page-wrapper .head-line {
+	transition: color .2s linear;
+	font-size: 46px;
+	line-height: 60px;
+	color: rgba(255, 255, 255, .2);
+	letter-spacing: -1px;
+	margin-bottom: 5px;
+}
+
+.plain.error-page-wrapper .subheader {
+	transition: color .2s linear;
+	font-size: 34px;
+	line-height: 46px;
+	color: #fff;
+}
+
+.plain.error-page-wrapper hr {
+	height: 1px;
+	background-color: rgba(255, 255, 255, .2);
+	border: none;
+	width: 250px;
+	margin: 35px 0;
+}
+
+.plain.error-page-wrapper .context {
+	transition: color .2s linear;
+	font-size: 16px;
+	line-height: 27px;
+	color: #fff;
+}
+
+.plain.error-page-wrapper .context p {
+	margin: 0;
+}
+
+.plain.error-page-wrapper .context p:nth-child(n+2) {
+	margin-top: 12px;
+}
+
+.plain.error-page-wrapper .buttons-container {
+	margin-top: 45px;
+	overflow: hidden;
+}
+
+.plain.error-page-wrapper .buttons-container a {
+	transition: color .2s linear, border-color .2s linear;
+	font-size: 13px;
+	text-transform: uppercase;
+	text-decoration: none;
+	color: #fff;
+	border: 2px solid white;
+	border-radius: 99px;
+	padding: 8px 30px 9px;
+	display: inline-block;
+	float: left;
+}
+
+.plain.error-page-wrapper .buttons-container a:hover {
+	background-color: rgba(255, 255, 255, .05);
+}
+
+.plain.error-page-wrapper .buttons-container a:first-child {
+	margin-right: 25px;
+}
+
+@media screen and (max-width: 485px) {
+	.plain.error-page-wrapper .header {
+		font-size: 34px;
+	}
+	.plain.error-page-wrapper .subheader {
+		font-size: 25px;
+		line-height: 38px;
+	}
+	.plain.error-page-wrapper hr {
+		width: 185px;
+		margin: 25px 0;
+	}
+	.plain.error-page-wrapper .context {
+		font-size: 14px;
+		line-height: 24px;
+	}
+	.plain.error-page-wrapper .buttons-container {
+		margin-top: 35px;
+	}
+	.plain.error-page-wrapper .buttons-container a {
+		font-size: 13px;
+		padding: 8px 0 7px;
+		width: 45%;
+		text-align: center;
+	}
+	.plain.error-page-wrapper .buttons-container a:first-child {
+		margin-right: 10%;
+	}
+}
+
+.background-color {
+	background-color: rgba(0, 99, 159, 1) !important;
+	min-height: 96vh;
+}
+
+.primary-text-color {
+	color: #FFFFFF !important;
+}
+
+.secondary-text-color {
+	color: rgba(0, 126, 204, 1) !important;
+}
+
+.border-button {
+	cursor: pointer;
+	color: #FFFFFF !important;
+	border-color: #FFFFFF !important;
+}
+
+.button {
+	background-color: #FFFFFF !important;
+	color: !important;
+}
+
+.navbar-custom-logo-container {
+	background-color: #fff;
+	z-index: 4;
+	padding: 4px;
+	border-radius: 0px;
+	position: relative;
+}
+
+.navbar-brand {
+	height: 45px;
+	padding: 0px;
+}
