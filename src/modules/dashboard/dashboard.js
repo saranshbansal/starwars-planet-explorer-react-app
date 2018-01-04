@@ -6,8 +6,8 @@ import * as api from '../../shared/api.js';
 import * as actions from './actions.js';
 import * as authenticationActions from '../login/actions.js';
 import * as util from '../../shared/util.js';
-import Search from '../searchbox/search.js';
-import PlanetsGrid from './results.js';
+import Search from './search.js';
+import ResultGrid from './resultGrid.js';
 
 class Dashboard extends Component {
 
@@ -33,9 +33,6 @@ class Dashboard extends Component {
                 planets: nextProps.listOfplanets || []
             });
         }
-    }
-
-    componentWillUnmount() {
     }
 
     handleSearch(event) {
@@ -75,7 +72,7 @@ class Dashboard extends Component {
                         searchTxt={this.state.input}
                         handleSearch={this.handleSearch}
                     />
-                    <PlanetsGrid rowdata={this.props.listOfplanets} />
+                    <ResultGrid rowdata={this.state.planets} />
                 </div>
             );
         }

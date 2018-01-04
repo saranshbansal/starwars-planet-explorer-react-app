@@ -93,6 +93,10 @@ button:hover {
     transform: translate(-50%, -50%);
 }
 
+.top-buffer {
+    margin-top: 20px;
+}
+
 /* Logout CSS */
 .logoutContainer {
     float: right;
