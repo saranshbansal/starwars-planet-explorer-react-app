@@ -31,7 +31,7 @@
 /* Login page CSS */
 .container {
     padding: 16px;
-    max-width: 50%;
+    max-width: 500px;
 }
 
 .imgcontainer {
@@ -58,7 +58,8 @@ img.avatar {
   border-radius: 50%;
   width: 150px;
   height: 150px;
-  background: black;
+  background-image: url(../img/Carina_Dwarf_Galaxy.jpg);
+  background-size: contain;
   color: white;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.19);
 }
@@ -93,4 +94,13 @@ img.avatar {
 
 .clickable {
     cursor: pointer;
+}
+
+.quote {
+    font-size: 14px;
+    font-weight: bold;
+    font-family: monospace;
+    font-style: italic;
+    padding: 30px;
+    display: block;
 }

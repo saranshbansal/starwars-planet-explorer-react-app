@@ -3,9 +3,7 @@ import * as util from '../../shared/util.js';
 
 const Planet = (props) => {
     const planetName = props.data.name.toUpperCase();
-    const randomColor = "#" + ((1 << 24) * Math.random() | 0).toString(16); 
     const style = {
-        background: randomColor,
         width: util.calculateDiameter(parseInt(props.data.population, 10)) + 'px',
         height: util.calculateDiameter(parseInt(props.data.population, 10)) + 'px'
     }
