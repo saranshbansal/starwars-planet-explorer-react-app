@@ -17,10 +17,24 @@ class Dashboard extends Component {
             input: '',
             fullInfoFilter: {},
             planets: [],
+            lastSearchTime: 0,
+            secondsElapsed: 0,
             error: ''
         }
         this.handleSearch = this.handleSearch.bind(this);
         this.showPlanetInfo = this.showPlanetInfo.bind(this);
+    }
+
+    componentDidMount() {
+        this.interval = setInterval(this.tick.bind(this), 1000);
+    }
+
+    componentWillUnmount() {
+        clearInterval(this.interval);
+    }
+
+    tick() {
+        this.setState({ secondsElapsed: this.state.secondsElapsed + 1 });
     }
 
     callApi(input, uri, results) {
@@ -38,12 +52,14 @@ class Dashboard extends Component {
 
     handleSearch(event) {
         const input = event.target.value;
+        const {lastSearchTime} = this.state;
+        const diff = this.state.secondsElapsed - lastSearchTime;
         let planets = [];
-        const error = (this.props.user.username !== 'Luke Skywalker' && this.props.counter > 15) && 'Only Luke Skywalker can make more than 15 searches in a minute.';
+        const error = (this.props.user.username !== 'Luke Skywalker' && this.props.counter > 15 && diff < 60) && util.timeoutMsg;
         if (input !== null && input.trim() !== '' && !error) {
             this.props.incrementSearchCount(this.props.counter + 1); // increment counter
             this.callApi(input, util.planetsUri, []);
-            this.setState({ input });
+            this.setState({ input, lastSearchTime: this.state.secondsElapsed, error: '' });
         } else {
             this.setState({ input, planets, error });
         }

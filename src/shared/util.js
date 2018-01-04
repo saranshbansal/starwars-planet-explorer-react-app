@@ -3,6 +3,7 @@ export function deepCompare(ar1, ar2) {
 }
 
 export const planetsUri = 'https://swapi.co/api/planets/?search=';
+export const timeoutMsg = 'Only Luke Skywalker can make more than 15 searches in a minute. Commoners, please sit idle for a minute.';
 
 export function calculateDiameter(population) {
   let diameter = 200;

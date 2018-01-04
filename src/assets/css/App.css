@@ -7,6 +7,10 @@
   height: 100px;
 }
 
+.App-avatar {
+    height: 50px;
+}
+
 .App-header {
   background-color: #000;
   height: 150px;
@@ -17,6 +21,7 @@
 .userContainer {
     float: left;
     color: yellowgreen;
+    font-weight: bold;
 }
 
 .App-intro {
