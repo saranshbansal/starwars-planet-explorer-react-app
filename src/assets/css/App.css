@@ -93,6 +93,12 @@ button:hover {
     transform: translate(-50%, -50%);
 }
 
+.infoContainer {
+    font-size: x-small;
+    width: 150px;
+    color: yellow;
+}
+
 .top-buffer {
     margin-top: 20px;
 }
@@ -100,4 +106,8 @@ button:hover {
 /* Logout CSS */
 .logoutContainer {
     float: right;
+}
+
+.clickable {
+    cursor: pointer;
 }

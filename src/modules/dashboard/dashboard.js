@@ -15,10 +15,12 @@ class Dashboard extends Component {
         super(props, context);
         this.state = {
             input: '',
+            fullInfoFilter: {},
             planets: []
         }
         this.handleSearch = this.handleSearch.bind(this);
         this.handleLogout = this.handleLogout.bind(this);
+        this.showPlanetInfo = this.showPlanetInfo.bind(this);
     }
 
     componentWillMount() {
@@ -53,6 +55,12 @@ class Dashboard extends Component {
         }
     }
 
+    showPlanetInfo(name) {
+        // insert planet in map
+        const fullInfoFilter = { ...this.state.fullInfoFilter, [name]: !this.state.fullInfoFilter[name]};
+        this.setState({ fullInfoFilter });
+    }
+
     handleLogout(e, history) {
         e.preventDefault();
         this.props.authenticateUser(false);
@@ -72,7 +80,11 @@ class Dashboard extends Component {
                         searchTxt={this.state.input}
                         handleSearch={this.handleSearch}
                     />
-                    <ResultGrid rowdata={this.state.planets} />
+                    <ResultGrid
+                        rowdata={this.state.planets}
+                        fullInfoFilter={this.state.fullInfoFilter}
+                        showPlanetInfo={this.showPlanetInfo}
+                    />
                 </div>
             );
         }
