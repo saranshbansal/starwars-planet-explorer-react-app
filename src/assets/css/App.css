@@ -4,7 +4,7 @@
 
 .App-logo {
   /* animation: App-logo-spin infinite 20s linear; */
-  height: 80px;
+  height: 100px;
 }
 
 .App-header {
@@ -14,8 +14,9 @@
   color: white;
 }
 
-.App-title {
-  font-size: 1.5em;
+.userContainer {
+    float: left;
+    color: yellowgreen;
 }
 
 .App-intro {
@@ -43,30 +44,6 @@ img.avatar {
     border-radius: 50%;
 }
 
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-button {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-}
-
-button:hover {
-    opacity: 0.8;
-}
-
 .cancelbtn {
     background-color: gray;
 }
@@ -83,6 +60,7 @@ button:hover {
   height: 150px;
   background: black;
   color: white;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 2px 8px 0 rgba(0, 0, 0, 0.19);
 }
 
 .planetName {
@@ -94,13 +72,18 @@ button:hover {
 }
 
 .infoContainer {
-    font-size: x-small;
-    width: 150px;
+    font-size: small;
+    width: 200px;
     color: yellow;
+    background: black;
+    opacity: 0.8;
+    border-radius: 30px;
+    padding: 5px;
 }
 
-.top-buffer {
-    margin-top: 20px;
+.planetContainer {
+    margin: 20px;
+    display: inline-flex;
 }
 
 /* Logout CSS */

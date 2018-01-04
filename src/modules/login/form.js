@@ -14,7 +14,7 @@ const LoginForm = (props) => {
                 <input type="password" placeholder="Enter Password" name="password" value={props.password} onChange={props.handleInputChange} />
             </div>
             <div className="container" style={{backgroundColor:'#f1f1f1'}}>
-                <button type="submit" className="btn btn-success" onClick={e => props.handleLogin(e)}>LOGIN</button>
+                <button type="submit" onClick={e => props.handleLogin(e)}>LOGIN</button>
                 {props.error && (
                     <div className="errorContainer">
                         {'User not authorized.'}

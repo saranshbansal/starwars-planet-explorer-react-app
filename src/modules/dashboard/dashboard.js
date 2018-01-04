@@ -3,9 +3,10 @@ import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import * as api from '../../shared/api.js';
+import * as util from '../../shared/util.js';
 import * as actions from './actions.js';
 import * as authenticationActions from '../login/actions.js';
-import Search from './search.js';
+import Search from './searchBox.js';
 import ResultGrid from './resultGrid.js';
 
 class Dashboard extends Component {
@@ -19,23 +20,30 @@ class Dashboard extends Component {
             error: ''
         }
         this.handleSearch = this.handleSearch.bind(this);
-        this.handleLogout = this.handleLogout.bind(this);
         this.showPlanetInfo = this.showPlanetInfo.bind(this);
+    }
+
+    callApi(input, uri, results) {
+        api.getPlanetSuggestions(input, uri, (response) => {
+            if (response != null && response.body != null) {
+                const resultNode = response.body;
+                results = [...results].concat(resultNode.results || []);
+                this.setState({ planets: results });
+                if (resultNode.next) {
+                    this.callApi('', resultNode.next, results);
+                }
+            }
+        });
     }
 
     handleSearch(event) {
         const input = event.target.value;
         let planets = [];
         const error = (this.props.user.username !== 'Luke Skywalker' && this.props.counter > 15) && 'Only Luke Skywalker can make more than 15 searches in a minute.';
-        if (input && input.trim() !== ''&& !error) {
+        if (input !== null && input.trim() !== '' && !error) {
             this.props.incrementSearchCount(this.props.counter + 1); // increment counter
-            api.getPlanetSuggestions(input, (response) => {
-                if (response != null && response.body != null) {
-                    const resultNode = response.body;
-                    planets = resultNode.results || [];
-                    this.setState({ input, planets });
-                }
-            });
+            this.callApi(input, util.planetsUri, []);
+            this.setState({ input });
         } else {
             this.setState({ input, planets, error });
         }
@@ -47,11 +55,6 @@ class Dashboard extends Component {
         this.setState({ fullInfoFilter });
     }
 
-    handleLogout(e, history) {
-        e.preventDefault();
-        this.props.authenticateUser(false);
-    };
-
     render() {
         if (!this.props.isLoggedIn || !this.props.location.state.isLoggedIn) {
             return <Redirect to={{
@@ -61,9 +64,6 @@ class Dashboard extends Component {
         } else {
             return (
                 <div className="container-fluid">
-                    <div className="logoutContainer">
-                        <button type="submit" className="btn btn-default" onClick={e => this.handleLogout(e)}>Logout</button>
-                    </div>
                     <Search
                         searchTxt={this.state.input}
                         handleSearch={this.handleSearch}

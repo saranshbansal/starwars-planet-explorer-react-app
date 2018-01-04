@@ -1,7 +1,7 @@
 import * as request from 'superagent';
 
-export function getPlanetSuggestions(input, sucessCB, errorCB) {
-    request.get('https://swapi.co/api/planets/?search=' + input).end((error, response) => {
+export function getPlanetSuggestions(input, uri, sucessCB, errorCB) {
+    request.get(uri + input).end((error, response) => {
         if (error && errorCB) {
             //  Call error call back
             errorCB(error);
