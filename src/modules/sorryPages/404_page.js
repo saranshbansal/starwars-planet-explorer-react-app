@@ -12,16 +12,13 @@ class ErrorPage extends Component {
         <div className="content-container">
           <div className="head-line secondary-text-color">{':('}</div>
           <div className="subheader primary-text-color">
-            {'Looks like we are having'}
-            <br /> {'some server issues.'}
+            {'Looks like your spaceship'}
+            <br /> {'is lost in the universe.'}
           </div>
           <hr />
           <div className="clearfix" />
           <div className="context primary-text-color">
-            <p>{'Go back to the previous page and try again. If you think something is broken, report a problem.'}</p>
-          </div>
-          <div className="buttons-container">
-            <a className="border-button" href="http://www.gartner.com/technology/site-index.jsp">{'Visit Sitemap'}</a>
+            <p>{'Please try again. If you think something is broken, report a problem.'}</p>
           </div>
         </div>
       </div>

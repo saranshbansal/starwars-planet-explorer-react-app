@@ -2,15 +2,13 @@ import React, { Component } from 'react';
 import Header from './header.js';
 import Dashboard from '../dashboard/dashboard.js';
 
-class Layout extends Component {
-  render(props) {
+const Layout = (props) => {
     return (
       <div className="App">
-        <Header />
+        <Header {...props} />
         <Dashboard {...props} />
       </div>
     );
-  }
-}
+};
 
 export default Layout;

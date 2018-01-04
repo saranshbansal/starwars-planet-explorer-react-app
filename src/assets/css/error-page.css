@@ -1,51 +1,3 @@
-* {
-	-moz-box-sizing: border-box;
-	-webkit-box-sizing: border-box;
-	box-sizing: border-box
-}
-
-html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p,
-	blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd,
-	q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li,
-	fieldset, form, label, legend, caption, article, aside, canvas, details,
-	figcaption, figure, footer, header, hgroup, menu, nav, section, summary,
-	time, mark, audio, video {
-	padding: 0;
-	border: 0;
-	outline: 0;
-	vertical-align: baseline;
-	background: transparent
-}
-
-article, aside, details, figcaption, figure, footer, header, hgroup, nav,
-	section {
-	display: block
-}
-
-html {
-	font-size: 14px;
-	line-height: 24px;
-	width: 100%;
-	height: 100%;
-	-webkit-text-size-adjust: 100%;
-	-ms-text-size-adjust: 100%;
-	overflow-y: scroll;
-	overflow-x: hidden
-}
-
-img {
-	vertical-align: middle;
-	max-width: 100%;
-	height: auto;
-	border: 0;
-	-ms-interpolation-mode: bicubic
-}
-
-body {
-	min-height: 100%;
-	-webkit-font-smoothing: subpixel-antialiased
-}
-
 .clearfix {
 	clear: both;
 	zoom: 1
@@ -181,7 +133,7 @@ body {
 }
 
 .background-color {
-	background-color: rgba(0, 99, 159, 1) !important;
+	background-color: rgb(250, 210, 11) !important;
 	min-height: 96vh;
 }
 
@@ -197,11 +149,6 @@ body {
 	cursor: pointer;
 	color: #FFFFFF !important;
 	border-color: #FFFFFF !important;
-}
-
-.button {
-	background-color: #FFFFFF !important;
-	color: !important;
 }
 
 .navbar-custom-logo-container {

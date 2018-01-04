@@ -71,6 +71,10 @@ button:hover {
     background-color: gray;
 }
 
+.errorContainer {
+    color: red;
+}
+
 /* CSS for Planets */
 .circle {
   position: relative;
@@ -87,4 +91,9 @@ button:hover {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+/* Logout CSS */
+.logoutContainer {
+    float: right;
 }
