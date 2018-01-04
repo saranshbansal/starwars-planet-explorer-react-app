@@ -1,23 +1,17 @@
 import {applyMiddleware, compose, createStore, combineReducers} from 'redux';
 import { createLogger } from 'redux-logger';
-import { routerMiddleware, routerReducer } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
 import dashboardReducer from '../modules/dashboard/reducer.js';
 import authenticationReducer from '../modules/login/reducer.js';
 
 const rootReducer = combineReducers({
   dashboardReducer,
-  authenticationReducer,
-  routing: routerReducer
+  authenticationReducer
 });
-
-export const history = createHistory();
 
 const initialState = {};
 const enhancers = [];
 const middleware = [
-  createLogger({ collapsed: true }),
-  routerMiddleware(history)
+  createLogger({ collapsed: true })
 ];
 
 if (process.env.NODE_ENV === 'development') {

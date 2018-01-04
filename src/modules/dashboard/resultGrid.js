@@ -11,7 +11,7 @@ const ResultGrid = (props) => {
 
     return (
         <div>
-            { planets }
+            { props.error ? props.error : planets }
         </div>
     );
 }

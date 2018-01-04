@@ -11,8 +11,7 @@ class Login extends Component {
         this.state = {
             username: '',
             password: '',
-            error: '',
-            redirectToReferrer: false
+            error: ''
         }
         this.handleLogin = this.handleLogin.bind(this);
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -26,21 +25,23 @@ class Login extends Component {
         e.preventDefault();
 
         const { username, password } = this.state;
-        const { history } = this.props;
 
-        if (username === 'Saransh' && password === '12345') {
-            this.setState({ error: false, redirectToReferrer: true });
-            this.props.authenticateUser(true);
-            history.push('/dashboard');
-        } else {
-            this.setState({ error: true, redirectToReferrer: false });
+        if (!username || !password) {
+            this.setState({ error: 'Please enter Username and Password.'});
             this.props.authenticateUser(false);
+        } else {
+            this.setState({ error: '' });
+            this.props.storeUser({username, password});
+            this.props.authenticateUser(true);
         }
     }
     
     render() {
-        if (this.props.isLoggedIn) {
-            return <Redirect to="/dashboard" />;
+        if (this.props.isLoggedIn || (this.props.location.state && this.props.location.state.isLoggedIn)) {
+            return <Redirect to={{
+                pathname: '/dashboard',
+                state: { isLoggedIn: this.props.isLoggedIn }
+            }} />;
         } else {
             return (
                 <LoginForm
@@ -63,6 +64,7 @@ function mapStateToProps(state) {
 
 function mapDispatchToProps(dispatch) {
     return bindActionCreators({
+        storeUser: actions.storeUser,
         authenticateUser: actions.authenticateUser
     }, dispatch);
 }

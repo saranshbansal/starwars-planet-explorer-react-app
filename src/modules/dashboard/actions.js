@@ -1,3 +1,3 @@
-export function searchPlanets(response) {
-    return { type: 'SEARCH_PLANET_RESPONSE', payload: response };
+export function incrementSearchCount(response) {
+    return { type: 'SEARCH_COUNT_INCREMENT', payload: response };
 }

@@ -3,8 +3,8 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
-import { ConnectedRouter } from 'react-router-redux';
-import store, { history } from './shared/store.js';
+import { BrowserRouter } from 'react-router-dom';
+import store from './shared/store.js';
 import App from './modules/container/App.js';
 import './assets/css/app.css';
 import './assets/css/error-page.css';
@@ -16,11 +16,11 @@ window._app_container = document.getElementById('root');
 //  wrap whole app in Provider so every component has access to the store
 render(
     <Provider store={store}>
-        <ConnectedRouter history={history}>
+        <BrowserRouter>
             <div className="fluidContainer">
                 <App />
             </div>
-        </ConnectedRouter>
+        </BrowserRouter>
     </Provider>,
     window._app_container
 )
