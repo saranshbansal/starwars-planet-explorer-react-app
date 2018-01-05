@@ -1,8 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './index';
+import { shallow, mount } from 'enzyme';
+import chai, { expect } from 'chai';
+import store from '../../../shared/store';
+import Timer from '../timer.js';
 
-it('renders without crashing', () => {
-    const div = document.createElement('div');
-    ReactDOM.render(<App />, div);
+it('<Timer /> :: render test', () => {
+    const wrapper = shallow(<Timer />);
+    expect(wrapper).to.have.lengthOf(1);
+});
+
+it('<Timer /> :: time simulation test', () => {
+    const wrapper = mount(<Timer />);
+    expect(wrapper.state().secondsElapsed).to.equal(0);    
+    wrapper.instance().tick();
+    expect(wrapper.state().secondsElapsed).to.equal(1);
+    expect(wrapper.find('div').text()).to.equal(' (Time Elapsed: 1 seconds)');
 });

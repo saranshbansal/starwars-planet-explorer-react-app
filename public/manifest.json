@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Star Wars Universe",
+  "name": "Star Wars Universe in React+Redux",
   "icons": [
     {
       "src": "favicon.ico",
