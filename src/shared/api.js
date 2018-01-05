@@ -12,8 +12,8 @@ export function getPlanetSuggestions(input, uri, sucessCB, errorCB) {
     });
 }
 
-export function getAllPlanets(sucessCB, errorCB) {
-    request.get('https://swapi.co/api/planets/').end((error, response) => {
+export function getAllPlanets(uri, sucessCB, errorCB) {
+    request.get(uri).end((error, response) => {
         if (error && errorCB) {
             //  Call error call back
             errorCB(error);

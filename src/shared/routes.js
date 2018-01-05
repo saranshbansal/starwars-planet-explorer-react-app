@@ -1,16 +1,16 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom'
-import Main from '../container/Main.js';
-import Login from '../login/login.js';
-import ErrorComponent from '../sorryPages/404_page.js';
+import App from '../modules/app.js';
+import Login from '../modules/login/login.js';
+import ErrorComponent from '../modules/sorryPages/404_page.js';
 
-const App = () => (
+const Routes = () => (
   <div>
     <main>
       <Switch>
         <Route exact path="/login" component={Login} />
-        <Route exact path="/" component={Main} />
-        <Route exact path="/dashboard" component={Main} />
+        <Route exact path="/" component={App} />
+        <Route exact path="/dashboard" component={App} />
         <Route exact path="/error" component={ErrorComponent} />
         <Route path="*" component={ErrorComponent} />
       </Switch>
@@ -18,4 +18,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default Routes;

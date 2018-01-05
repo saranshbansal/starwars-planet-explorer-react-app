@@ -5,7 +5,7 @@ import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from './shared/store.js';
-import App from './modules/container/App.js';
+import Routes from './shared/routes.js';
 import './assets/css/app.css';
 import './assets/css/error-page.css';
 import './assets/css/index.css';
@@ -18,7 +18,7 @@ render(
     <Provider store={store}>
         <BrowserRouter>
             <div className="fluidContainer">
-                <App />
+                <Routes />
             </div>
         </BrowserRouter>
     </Provider>,
