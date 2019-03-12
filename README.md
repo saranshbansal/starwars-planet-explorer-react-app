@@ -8,7 +8,11 @@ The application has 2 screens:
 
 Screen 1 (Login Screen): Allow the user to login as a character from STAR WARS using the character name as the username and birth year as the password. Example: • Username: Luke Skywalker • Password : 19BBY  
 
+![alt text](https://github.com/saranshbansal/starwars-planet-explorer-react-app/blob/master/src/assets/img/1.png)
+
 Screen 2 (Search Screen): a type-along search which searches for planets and lists them in components that are sized relative to their population on every keypress in the input field. (eg: a bigger font size for a planet with larger population, or a bigger container size for a planet with larger population). On clicking the item from the results of the type-along search, it will display the corresponding planet's information. C00l Shit!
+
+![alt text](https://github.com/saranshbansal/starwars-planet-explorer-react-app/blob/master/src/assets/img/2.png)
 
 ## Feature: • Only the user Luke Skywalker should be able to make more than 15 searches in a minute. 
 
