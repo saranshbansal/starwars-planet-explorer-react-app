@@ -6,7 +6,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import store from './shared/store.js';
 import Routes from './shared/routes.js';
-import './assets/css/app.css';
+import './assets/css/main.css';
 import './assets/css/error-page.css';
 import './assets/css/index.css';
 import registerServiceWorker from './registerServiceWorker';
